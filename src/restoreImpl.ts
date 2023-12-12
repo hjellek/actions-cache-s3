@@ -44,6 +44,7 @@ export async function restoreImpl(
         const failOnCacheMiss = utils.getInputAsBool(Inputs.FailOnCacheMiss);
         const lookupOnly = utils.getInputAsBool(Inputs.LookupOnly);
 
+        core.debug(`cachePaths: ${JSON.stringify(cachePaths, null, 2)}`)
         const cacheKey = await cache.restoreCache(
             cachePaths.slice(),
             primaryKey,
